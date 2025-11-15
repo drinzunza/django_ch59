@@ -1,0 +1,21 @@
+---- ONE TIME COMMANDS ------
+
+# creata virtual env:
+python3 -m venv venv
+
+
+# activate venv
+win: venv\Scripts\activate
+mac: source venv/bin/activate
+
+# install django
+python3 -m pip install django whitenoise pillow
+
+
+# create the project
+django-admin startproject config .
+
+____________________________
+
+# create a pages app
+python3 manage.py startapp pages

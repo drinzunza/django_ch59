@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Welcome!!
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to my project</h1>
+
+<img class="top-img" src="{% static 'imgs/who.jpg' %}">
+
+{% endblock %}
