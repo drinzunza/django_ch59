@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Note Details
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="details">
+
+    {% if note.image %}
+    <img src="{{note.image.url}}">
+    {% endif %}
+
+    <h1>{{note.title}}</h1>
+    <label class="date">{{note.create_on}}</label>
+
+    <p>{{note.description}}</p>
+
+
+    <hr>
+
+    <h4>Comments</h4>
+    {% for comment in comments %}
+    <div class="comment">
+        <label>{{comment.author.username}}</label>
+        <p>{{comment.content}}</p>
+        <label>Created on: {{comment.created_on}}</label>
+    </div>
+    {% endfor %}
+
+    <h4>Create a new comment</h4>
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'create_comment' %}">
+        {% csrf_token %}
+
+        <input type="hidden" name="note_id" value="{{note.id}}">
+
+        <div>
+            <textarea rows="3" class="form-control" name="content"></textarea>
+        </div>
+
+        <button class="btn btn-sm btn-outline-dark" type="submit">Post comment</button>
+    </form>
+    {% else %}
+        <p>To post comments, you need to login first</p>
+        <a href="{% url 'login' %}">Login here!</a>
+    {% endif %}
+
+</div>
+{% endblock %}

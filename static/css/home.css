@@ -9,3 +9,29 @@ h1 {
     margin: 12px auto;
     max-width: 90%;
 }
+
+.parent {
+    display: flex;
+    margin:20px
+}
+
+.home {
+    padding: 20px;
+}
+
+
+@media(max-width:767px) {
+    /* APPLY ONLY TO SMART PHONES */
+    h1 {
+        color: red;
+    }
+
+    .parent {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 0;
+    }
+}

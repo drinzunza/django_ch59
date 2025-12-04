@@ -19,3 +19,13 @@ ____________________________
 
 # create a pages app
 python3 manage.py startapp pages
+
+
+
+
+
+# MIGRATIONS
+Everytime you modify any of the models, you need to run MIGRATIONS
+
+python3 manage.py makemigrations
+python3 manage.py migrate
