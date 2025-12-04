@@ -29,3 +29,13 @@ Everytime you modify any of the models, you need to run MIGRATIONS
 
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+
+
+
+
+## GIT
+
+git add -A
+git commit -m "ANY MESSAGE"
+git push
